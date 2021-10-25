@@ -31,8 +31,9 @@ server.get('/api/dogs/:id', async (req, res) => {
     const dog = await Dog.findById(id)
     if (!dog) {
       res.status(404).json({ message: `dog ${id} not found`})
+    } else {
+      res.status(200).json(dog)
     }
-
   } catch (error) {
     res.status(500).json({ message: `Argh!!! ${error.message}`})
   }
