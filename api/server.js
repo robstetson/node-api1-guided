@@ -67,8 +67,7 @@ server.put('/api/dogs/:id', async (req, res) => {
     } else {
       // 3- hit the db and send the stuff
       const updatedDog = await Dog.update(id, { name, weight })
-      console.log(updatedDog)
-      res.end()
+      res.status(200).json(updatedDog)
     }
   } catch (error) {
     res.status(500).json({ message: `Argh!!! ${error.message}` })
