@@ -23,7 +23,13 @@ server.get('/api/dogs', async (req, res) => {
   }
 })
 // [GET] /api/dogs/:id (R of CRUD, fetch dog by :id)
-server.get('/')
+server.get('/api/dogs/:id', async (req, res) => {
+  try {
+    
+  } catch (error) {
+    res.status(500).json({ message: `Argh!!! ${error.message}`})
+  }
+})
 // [POST] /api/dogs (C of CRUD, create new dog from JSON payload)
 // [PUT] /api/dogs/:id (U of CRUD, update dog with :id using JSON payload)
 // [DELETE] /api/dogs/:id (D of CRUD, remove dog with :id)
