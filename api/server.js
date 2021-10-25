@@ -12,8 +12,6 @@ server.get('/', (req, res) => {
   res.json({ message: 'hello, world'})
 })
 
-throw new Error('MUAHAHHAAH')
-
 // [GET] /api/dogs (R of CRUD, fetch all dogs)
 server.get('/api/dogs', async (req, res) => {
   try {
