@@ -69,10 +69,8 @@ server.put('/api/dogs/:id', async (req, res) => {
       const updatedDog = await Dog.update(id, { name, weight })
       res.status(200).json(updatedDog)
     }
-  } catch (errorÎ){
+  } catch (error) {
     res.status(500).json({ message: `Argh!!! ${error.message}` })
-  } finally {
-
   }
 })
 // [DELETE] /api/dogs/:id (D of CRUD, remove dog with :id)
