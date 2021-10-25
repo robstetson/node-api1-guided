@@ -11,7 +11,7 @@ server.use(express.json())
 server.get('/', (req, res) => {
   res.json({ message: 'hello, world'})
 })
-
+throw new Error('argh!!!')
 // [GET] /api/dogs (R of CRUD, fetch all dogs)
 server.get('/api/dogs', async (req, res) => {
   try {
