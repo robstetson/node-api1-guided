@@ -49,8 +49,8 @@ server.post('/api/dogs', async (req, res) => {
     } else {
       // 3- hit the db and send the stuff
       const dog = await Dog.create({ name, weight })
+      res.status(201).json(dog)
     }
-
   } catch (error) {
     res.status(500).json({ message: `Argh!!! ${error.message}` })
   }
