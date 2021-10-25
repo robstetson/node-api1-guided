@@ -25,7 +25,9 @@ server.get('/api/dogs', async (req, res) => {
 // [GET] /api/dogs/:id (R of CRUD, fetch dog by :id)
 server.get('/api/dogs/:id', async (req, res) => {
   try {
-    
+    // pull that third segment of the path
+    // because that is the id we need
+    const { id } = req.params
   } catch (error) {
     res.status(500).json({ message: `Argh!!! ${error.message}`})
   }
