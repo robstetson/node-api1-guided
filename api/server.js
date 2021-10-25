@@ -75,10 +75,11 @@ server.put('/api/dogs/:id', async (req, res) => {
 })
 // [DELETE] /api/dogs/:id (D of CRUD, remove dog with :id)
 server.delete('/api/dogs/:id', (req, res) => {
-  Dog.delete(req.params.id)
+  const { id } = req.params
+  Dog.delete(id)
     .then(dog => {
       if (!dog) {
-        res.status(404).json({ message: `dog ${req.params.id} not found` })
+        res.status(404).json({ message: `dog ${id} not found` })
       }
     })
     .catch(error => {
