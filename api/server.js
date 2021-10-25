@@ -45,8 +45,12 @@ server.post('/api/dogs', async (req, res) => {
     const { name, weight } = req.body
     // 2- assume stuff is bad, handle
     if (!name || !weight) {
-      res.status(422).json({ message: 'Dogs need name & weight'})
+      res.status(422).json({ message: 'Dogs need name & weight' })
+    } else {
+      // 3- hit the db and send the stuff
+      const dog = await Dog.create({ name, weight })
     }
+
   } catch (error) {
     res.status(500).json({ message: `Argh!!! ${error.message}` })
   }
