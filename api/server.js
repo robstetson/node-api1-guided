@@ -16,7 +16,7 @@ server.get('/api/dogs', async (req, res) => {
   try {
 
   } catch (error) {
-    res.status(500)
+    res.status(500).json({ message: `Argh!!! ${error.message}`})
   }
 })
 // [GET] /api/dogs/:id (R of CRUD, fetch dog by :id)
