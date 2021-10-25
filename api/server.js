@@ -76,8 +76,12 @@ server.put('/api/dogs/:id', async (req, res) => {
 // [DELETE] /api/dogs/:id (D of CRUD, remove dog with :id)
 server.delete('/api/dogs/:id', (req, res) => {
   Dog.delete(req.params.id)
-    .then()
-    .catch()
+    .then(stuff => {
+      console.log(stuff)
+    })
+    .catch(error => {
+      res.status(500).json({ message: `Argh!!! ${error.message}` })
+    })
 })
 
 // EXPOSING THE SERVER TO OTHER MODULES
