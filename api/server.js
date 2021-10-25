@@ -59,6 +59,8 @@ server.post('/api/dogs', async (req, res) => {
 server.put('/api/dogs/:id', async (req, res) => {
   try {
     // 1- gather info from client
+    const { id } = req.params
+    const { name, weight } = req.body
     // 2- assume stuff is bad, handle
     // 3- hit the db and send the stuff
   } catch (error) {
