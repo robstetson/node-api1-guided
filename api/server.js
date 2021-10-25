@@ -56,6 +56,15 @@ server.post('/api/dogs', async (req, res) => {
   }
 })
 // [PUT] /api/dogs/:id (U of CRUD, update dog with :id using JSON payload)
+server.put('/api/dogs/:id', async (req, res) => {
+  try {
+    // 1- gather info from client
+    // 2- assume stuff is bad, handle
+    // 3- hit the db and send the stuff
+  } catch (error) {
+    res.status(500).json({ message: `Argh!!! ${error.message}` })
+  }
+})
 // [DELETE] /api/dogs/:id (D of CRUD, remove dog with :id)
 
 // EXPOSING THE SERVER TO OTHER MODULES
