@@ -29,7 +29,10 @@ server.get('/api/dogs/:id', async (req, res) => {
     // because that is the id we need
     const { id } = req.params
     const dog = await Dog.findById(id)
-    
+    if (!dog) {
+      
+    }
+
   } catch (error) {
     res.status(500).json({ message: `Argh!!! ${error.message}`})
   }
