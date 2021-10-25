@@ -15,7 +15,8 @@ server.get('/', (req, res) => {
 // [GET] /api/dogs (R of CRUD, fetch all dogs)
 server.get('/api/dogs', async (req, res) => {
   try {
-    const dogs = await Dog.findAll()
+    const dogs = await Dog.findAll() // trip to the db using an async helper function
+    res.status(200).json(dogs)
   } catch (error) {
     res.status(500).json({ message: `Argh!!! ${error.message}`})
   }
