@@ -17,6 +17,7 @@ server.get('/api/dogs', async (req, res) => {
   try {
     const dogs = await Dog.findAll() // trip to the db using an async helper function
     res.status(200).json(dogs)
+    res.status(200).json(dogs)
   } catch (error) {
     console.log(error.message) // log statement!!
     res.status(500).json({ message: `Argh!!! ${error.message}`})
