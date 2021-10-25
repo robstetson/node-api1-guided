@@ -66,6 +66,7 @@ server.put('/api/dogs/:id', async (req, res) => {
       res.status(422).json({ message: 'Dogs need name & weight' })
     } else {
       // 3- hit the db and send the stuff
+      const updatedDog = await Dog.update(id)
     }
   } catch (error) {
     res.status(500).json({ message: `Argh!!! ${error.message}` })
