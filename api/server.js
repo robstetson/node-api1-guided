@@ -28,6 +28,8 @@ server.get('/api/dogs/:id', async (req, res) => {
     // pull that third segment of the path
     // because that is the id we need
     const { id } = req.params
+    const dog = await Dog.findById(id)
+    
   } catch (error) {
     res.status(500).json({ message: `Argh!!! ${error.message}`})
   }
