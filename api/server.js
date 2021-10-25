@@ -62,7 +62,11 @@ server.put('/api/dogs/:id', async (req, res) => {
     const { id } = req.params
     const { name, weight } = req.body
     // 2- assume stuff is bad, handle
-    // 3- hit the db and send the stuff
+    if (!name || !weight) {
+      res.status(422).json({ message: 'Dogs need name & weight' })
+    } else {
+      // 3- hit the db and send the stuff
+    }
   } catch (error) {
     res.status(500).json({ message: `Argh!!! ${error.message}` })
   }
