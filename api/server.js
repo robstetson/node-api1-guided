@@ -13,7 +13,11 @@ server.get('/', (req, res) => {
 })
 // [GET] /api/dogs (R of CRUD, fetch all dogs)
 server.get('/api/dogs', async (req, res) => {
-  
+  try {
+
+  } catch (error) {
+    res.status(500)
+  }
 })
 // [GET] /api/dogs/:id (R of CRUD, fetch dog by :id)
 // [POST] /api/dogs (C of CRUD, create new dog from JSON payload)
