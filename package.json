@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node index.js",
     "hello": "echo \"web 47 rocks\"",
-    "ketchup": "git fetch && git reset --hard origin/lecture"
+    "ketchup": "git fetch && git reset --hard origin/lecture",
+    "server": "nodemon index.js"
   },
   "repository": {
     "type": "git",
