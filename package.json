@@ -1,0 +1,29 @@
+{
+  "name": "api1-guided",
+  "version": "1.0.0",
+  "description": "Guided project for **Node API 1** Module.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robstetson/node-api1-guided.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robstetson/node-api1-guided/issues"
+  },
+  "homepage": "https://github.com/robstetson/node-api1-guided#readme",
+  "devDependencies": {
+    "eslint": "^8.3.0",
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "nanoid": "^3.1.30"
+  }
+}
